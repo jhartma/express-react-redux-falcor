@@ -25,7 +25,8 @@ export const Counter = React.createClass({
         <div className="counter">{this.props.counter}</div>
         <button className="button-increment" onClick={this.props.incrementCounter}>Increment counter</button>
         <div>Falcor Store</div>
-        <h1>{this.props.title}</h1>
+        <h1>Cached User Input</h1>
+        <p>{this.props.title}</p>
         <input onKeyUp={this.setTitle} placeholder="Set Title" ref="title" type="text"></input>
         <h1>Fetched from database</h1>
         <p>User: {this.props.user}</p>

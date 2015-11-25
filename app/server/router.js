@@ -1,6 +1,6 @@
 import Router from "falcor-router"
 import store from "./store"
-import User from "./db"
+import User from "./db/models/User"
 
 export default new Router([
   {

@@ -1,11 +1,7 @@
 import Sequelize from "sequelize"
+import sequelize from "../db.js"
 
-const sequelize = new Sequelize(null, null, null, {
-  host: "localhost",
-  dialect: "sqlite",
-})
-
-var User = sequelize.define("user", {
+const User = sequelize.define("user", {
   firstName: {
     type: Sequelize.STRING,
     field: "first_name",
