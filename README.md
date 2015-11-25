@@ -16,6 +16,7 @@ npm run dev:server
 npm run dev:client
 ```
 the app is available at [localhost:8080](localhost:8080)
+
 # Stack
 - Babel 6
 - Webpack

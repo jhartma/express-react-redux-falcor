@@ -1,8 +1,8 @@
 import express from "express"
 import falcorExpress from "falcor-express"
-import Router from "falcor-router"
 import cors from "cors"
 import bodyParser from "body-parser"
+import FalcorRouter from "./router"
 
 let app = express()
 let PORT = 3000
@@ -12,23 +12,9 @@ const corsOptions = {
   "origin": "http://localhost:8080",
 }
 
-const store = {
-  title: "Hellos",
-}
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use("/model.json", cors(corsOptions), falcorExpress.dataSourceRoute( () => {
-  return new Router([
-    {
-      route: "title",
-      get() {
-        return { path: [ "title" ], value: store.title }
-      },
-      async set(jsonGraph) {
-        store.title = jsonGraph.title
-        return { path: [ "title" ], value: store.title }
-      },
-    },
-  ])
+  return FalcorRouter
 }))
 
 // serve static files from current directory
