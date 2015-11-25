@@ -1,5 +1,5 @@
 # Description
-This is a quick and dirty setup that showcases how Falcor works with Redux.
+This is a quick and dirty setup that showcases how Falcor on the server works with Redux on the client.
 
 # Stack
 - Babel 6
