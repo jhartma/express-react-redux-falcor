@@ -6,9 +6,11 @@ import { Counter } from "./Counter"
 import _ from "lodash"
 
 function mapStateToProps(state) {
+  console.log(state.falcorReducer)
   return {
     counter: state.counterReducer.get("counter"),
     title: state.falcorReducer.title,
+    user: state.falcorReducer.user,
   }
 }
 

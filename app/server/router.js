@@ -1,5 +1,6 @@
 import Router from "falcor-router"
 import store from "./store"
+import User from "./db"
 
 export default new Router([
   {
@@ -10,6 +11,14 @@ export default new Router([
     async set(jsonGraph) {
       store.title = jsonGraph.title
       return { path: [ "title" ], value: store.title }
+    },
+  },
+  {
+    route: "user",
+    get() {
+      return User.findOne({ where: { firstName: "John" } }).then( (user) => {
+        return { path: [ "user" ], value: user.dataValues.firstName }
+      })
     },
   },
 ])

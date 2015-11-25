@@ -12,6 +12,7 @@ const store = makeStore()
 
 // Load initial values into store
 store.dispatch(retrievePath("title"))
+store.dispatch(retrievePath("user"))
 
 // Render App
 render((
