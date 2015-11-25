@@ -1,4 +1,4 @@
-import * as CounterActions from "../core/action_creators"
+import * as CounterActions from "../core/actions/action_creators"
 import { setPath } from "redux-falcor"
 import { bindActionCreators } from "redux"
 import { connect } from "react-redux"

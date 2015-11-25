@@ -1,8 +1,8 @@
 import { Map } from "immutable"
 import { expect } from "chai"
 
-import { incrementCounter as increment } from "../app/core/action_creators"
-import { incrementCounter } from "../app/core/actions"
+import { incrementCounter as increment } from "../app/core/actions/action_creators"
+import { incrementCounter } from "../app/core/actions/actions"
 import makeStore from "../app/core/store"
 import counterReducer from "../app/core/reducer/counterReducer"
 
