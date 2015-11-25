@@ -19,16 +19,16 @@ export const Counter = React.createClass({
   },
 
   render() {
+    console.log(this.props)
     return (
       <div>
-        <h1>Hello world</h1>
+        <h1 className="redux-title">Redux Store</h1>
         <div className="counter">{this.props.counter}</div>
         <button className="button-increment" onClick={this.props.incrementCounter}>Increment counter</button>
-        <div>Falcor Store</div>
-        <h1>Cached User Input</h1>
+        <h1>Falcor Cached User Input</h1>
         <p>{this.props.title}</p>
         <input onKeyUp={this.setTitle} placeholder="Set Title" ref="title" type="text"></input>
-        <h1>Fetched from database</h1>
+        <h1>Fetched from database via Falcor</h1>
         <p>User: {this.props.user}</p>
       </div>
     )

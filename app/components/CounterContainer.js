@@ -1,5 +1,5 @@
 import * as CounterActions from "../core/action_creators"
-import * as FalcorActions from "redux-falcor"
+import { setPath } from "redux-falcor"
 import { bindActionCreators } from "redux"
 import { connect } from "react-redux"
 import { Counter } from "./Counter"
@@ -15,6 +15,6 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators(_.merge(CounterActions, FalcorActions), dispatch)
+  return bindActionCreators(_.extend(CounterActions, { setPath: setPath }), dispatch)
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Counter)

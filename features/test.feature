@@ -7,4 +7,4 @@
   @watch
   Scenario: See hello message
     When I visit the root page
-    Then I see "Hello world"
+    Then I see an element ".redux-title" with the content "Redux Store"

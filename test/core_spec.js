@@ -1,10 +1,10 @@
 import { Map } from "immutable"
 import { expect } from "chai"
 
-import { increment } from "../app/core/action_creators"
+import { incrementCounter as increment } from "../app/core/action_creators"
 import { incrementCounter } from "../app/core/actions"
 import makeStore from "../app/core/store"
-import reducer from "../app/core/reducer"
+import counterReducer from "../app/core/reducer/counterReducer"
 
 describe("application logic", () => {
   describe("incrementCounter", () => {
@@ -23,7 +23,7 @@ describe("application logic", () => {
     it("handles INCREMENT_COUNTER", () => {
       const initialState = Map({ counter: 0 })
       const action = increment()
-      const nextState = reducer(initialState, action)
+      const nextState = counterReducer(initialState, action)
       expect(nextState).to.equal(Map({
         counter: 1,
       }))
@@ -31,7 +31,7 @@ describe("application logic", () => {
 
     it("handles INCREMENT_COUNTER with undefined state", () => {
       const action = increment()
-      const nextState = reducer(undefined, action)
+      const nextState = counterReducer(undefined, action)
       expect(nextState).to.equal(Map({
         counter: 1,
       }))
@@ -41,10 +41,9 @@ describe("application logic", () => {
   describe("store", () => {
     it("is a Redux store configured with the correct reducer", () => {
       const store = makeStore()
-      expect(store.getState()).to.equal(Map({ counter: 0 }))
-
+      expect(store.getState().counterReducer).to.equal(Map({ counter: 0 }))
       store.dispatch(increment())
-      expect(store.getState()).to.equal(Map({
+      expect(store.getState().counterReducer).to.equal(Map({
         counter: 1,
       }))
     })

@@ -26,3 +26,4 @@ the app is available at [localhost:8080](localhost:8080)
 - Redux
 - EsLint
 - Falcor
+- Sequelize
