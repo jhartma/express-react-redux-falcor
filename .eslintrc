@@ -7,7 +7,8 @@
     "es6": true
   },
   "plugins": [
-    "react"
+    "react",
+    "lodash"
   ],
   "ecmaFeatures": {
     "jsx": true
@@ -22,6 +23,8 @@
     "object-curly-spacing": [2, "always"],
     "space-before-blocks": [2, "always"],
     "new-cap": 0,
+
+    "lodash/import": 1,
 
     "react/display-name": 1,
     "react/forbid-prop-types": 0,

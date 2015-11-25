@@ -7,12 +7,13 @@ import CounterContainer from "../components/CounterContainer"
 import { Router, Route } from "react-router"
 import { retrievePath } from "redux-falcor"
 
+// Create Store
 const store = makeStore()
-// store.dispatch(setPath("title", "hallo"))
 
 // Load initial values into store
 store.dispatch(retrievePath("title"))
 
+// Render App
 render((
   <Provider store={store}>
     <Router>

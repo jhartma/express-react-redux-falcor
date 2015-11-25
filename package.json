@@ -37,6 +37,7 @@
     "babel-runtime": "^6.1.18",
     "body-parser": "^1.14.1",
     "cors": "^2.7.1",
+    "eslint-plugin-lodash": "^0.1.4",
     "express": "^4.13.3",
     "falcor": "^0.1.14",
     "falcor-express": "^0.1.2",
