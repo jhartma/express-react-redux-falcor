@@ -1,0 +1,59 @@
+{
+  "name": "app",
+  "private": "true",
+  "version": "0.0.1",
+  "description": "A learning project",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "build": "webpack",
+    "dev:client": "webpack-dev-server --devtool eval --progress --colors --content-base build",
+    "dev:server": "nodemon --exec babel-node app/server/index.js",
+    "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js  --recursive",
+    "test:watch": "npm run test -- --watch",
+    "test:cucumber": "./node_modules/.bin/chimp --chai --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.1.12",
+    "babel-loader": "^6.1.0",
+    "babel-plugin-transform-runtime": "^6.1.18",
+    "babel-preset-es2015": "^6.1.18",
+    "babel-preset-react": "^6.1.18",
+    "babel-preset-stage-0": "^6.1.18",
+    "chai": "^3.4.1",
+    "chai-immutable": "^1.5.3",
+    "chimp": "^0.20.2",
+    "mocha": "^2.3.4",
+    "nodemon": "^1.8.1",
+    "react-hot-loader": "^1.3.0",
+    "webpack": "^1.12.6",
+    "webpack-dev-server": "^1.12.1"
+  },
+  "dependencies": {
+    "babel-runtime": "^6.1.18",
+    "body-parser": "^1.14.1",
+    "cors": "^2.7.1",
+    "express": "^4.13.3",
+    "falcor": "^0.1.14",
+    "falcor-express": "^0.1.2",
+    "falcor-http-datasource": "^0.1.2",
+    "falcor-router": "^0.2.11",
+    "graphql": "^0.4.12",
+    "history": "^1.13.1",
+    "immutable": "^3.7.5",
+    "lodash": "^3.10.1",
+    "react": "^0.14.2",
+    "react-addons-pure-render-mixin": "^0.14.3",
+    "react-dom": "^0.14.2",
+    "react-redux": "^4.0.0",
+    "react-router": "^1.0.0",
+    "redux": "^3.0.4",
+    "redux-falcor": "^2.3.3",
+    "redux-logger": "^2.0.4",
+    "webpack": "^1.12.6"
+  }
+}
